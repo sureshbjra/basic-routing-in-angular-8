@@ -1,0 +1,51 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+            <ul class="list-group">
+                <li class="list-group-item active">Employee List</li>
+                <li class="list-group-item">
+                    <div class="row">
+                        <div class="col-sm-3 col-md-3 col-lg-3">
+                            <h3>Id</h3>
+                        </div>
+                        <div class="col-sm-3 col-md-3 col-lg-3">
+                            <h3>Name</h3>
+                        </div>
+                        <div class="col-sm-3 col-md-3 col-lg-3">
+                            <h3>Email</h3>
+                        </div>
+                        <div class="col-sm-3 col-md-3 col-lg-3">
+
+                        </div>
+                    </div>
+                </li>
+                <li class="list-group-item" *ngFor="let emp of employeeList">
+                    <div class="row">
+                        <div class="col-sm-3 col-md-3 col-lg-3">
+                            {{emp?.id}}
+                        </div>
+                        <div class="col-sm-3 col-md-3 col-lg-3">
+                            {{emp?.name}}
+                        </div>
+                        <div class="col-sm-3 col-md-3 col-lg-3">
+                           {{emp?.email}}
+                        </div>
+                        <div class="col-sm-3 col-md-3 col-lg-3">
+                            <div class="row">
+                                <div class="col-sm-4 col-md-4 col-lg-4">
+                                    <a [routerLink]="['/view', emp?.id]" class="btn btn-outline-warning">View</a>
+                                </div>
+                                <div class="col-sm-4 col-md-4 col-lg-4">
+                                    <a [routerLink]="['/edit', emp?.id]" class="btn btn-outline-info">Edit</a>
+                                </div>
+                                <div class="col-sm-4 col-md-4 col-lg-4">
+                                    <button type="button" (click)="delete()" class="btn btn-outline-danger">Delete</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
